@@ -1,0 +1,31 @@
+name: Auto Push Art
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"  # 根据需求修改版本（例如 "3.10"）
+      - name: Install dependencies
+        run: |
+          pip install matplotlib numpy  # 安装缺失的依赖
+          python -m pip install -r requirements.txt  # 保留原有依赖安装
+      - name: Generate Art
+        run: python generate_art.py
+      - name: Commit and Push
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add art.png
+          git commit -m "Auto update art $(date +%s)" || true
+          git push origin main
