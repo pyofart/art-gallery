@@ -19,7 +19,7 @@ jobs:
           pip install matplotlib numpy  # 安装缺失的依赖
           python -m pip install -r requirements.txt  # 保留原有依赖安装
       - name: Generate Art
-        run: python generate_art.py
+        run: python Minimalist_Art.py
       - name: Commit and Push
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
