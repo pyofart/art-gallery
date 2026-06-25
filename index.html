@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Art Gallery</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0d0d0d;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+        
+        header {
+            padding: 4rem 2rem 2rem;
+            text-align: center;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #ffffff;
+        }
+        
+        header p {
+            margin-top: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .collection {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .collection h2 {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: #888;
+            margin: 3rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #1a1a1a;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .artwork {
+            background: #111;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .artwork:hover {
+            transform: translateY(-4px);
+        }
+        
+        .artwork svg {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .artwork .info {
+            padding: 1rem;
+        }
+        
+        .artwork .title {
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        .artwork .meta {
+            font-size: 0.75rem;
+            color: #555;
+            margin-top: 0.3rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #333;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python Art Gallery</h1>
+        <p>generative art &bull; procedural patterns &bull; algorithmic design</p>
+    </header>
+    
+    <div class="collection">
+        <h2>Flow Fields</h2>
+        <div class="gallery">
+            <div class="artwork">
+                <object data="gallery/flow-ocean.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Ocean Current</div>
+                    <div class="meta">flow field &bull; 800 particles</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/flow-sunset.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Desert Sunset</div>
+                    <div class="meta">flow field &bull; 800 particles</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/flow-forest.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Forest Canopy</div>
+                    <div class="meta">flow field &bull; 800 particles</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/flow-midnight.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Midnight</div>
+                    <div class="meta">flow field &bull; 800 particles</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/flow-gold.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Gold Rush</div>
+                    <div class="meta">flow field &bull; 800 particles</div>
+                </div>
+            </div>
+        </div>
+        
+        <h2>Mandala</h2>
+        <div class="gallery">
+            <div class="artwork">
+                <object data="gallery/mandala-sun.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Solar Flare</div>
+                    <div class="meta">mandala &bull; 12 petals &bull; 8 layers</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/mandala-ocean.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Deep Blue</div>
+                    <div class="meta">mandala &bull; 8 petals &bull; 6 layers</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/mandala-spring.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Spring Bloom</div>
+                    <div class="meta">mandala &bull; 16 petals &bull; 7 layers</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/mandala-eclipse.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Eclipse</div>
+                    <div class="meta">mandala &bull; 6 petals &bull; 10 layers</div>
+                </div>
+            </div>
+            <div class="artwork">
+                <object data="gallery/mandala-fire.svg" type="image/svg+xml"></object>
+                <div class="info">
+                    <div class="title">Wildfire</div>
+                    <div class="meta">mandala &bull; 24 petals &bull; 5 layers</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        Python Art Gallery &mdash; pyofart
+    </footer>
+</body>
+</html>
