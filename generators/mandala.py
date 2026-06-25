@@ -155,29 +155,54 @@ def generate_mandala_svg(
 
 
 if __name__ == "__main__":
-    print("🔮 曼陀罗生成器")
-    print("=" * 40)
-    
     import os
+    import sys
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Mandala Generator")
+    parser.add_argument("--seed", type=int, default=42, help="随机种子")
+    args = parser.parse_args()
+    
+    base_seed = args.seed
+    random.seed(base_seed)
+    
     os.makedirs("gallery", exist_ok=True)
     
-    # 生成多种风格
-    configs = [
-        ("mandala-sun", 12, 8, "warm", "#0d0d0d"),
-        ("mandala-ocean", 8, 6, "cool", "#0a1628"),
-        ("mandala-spring", 16, 7, "pastel", "#1a1a2e"),
-        ("mandala-eclipse", 6, 10, "mono", "#000000"),
-        ("mandala-fire", 24, 5, "warm", "#1a0a00"),
+    print(f"🔮 曼陀罗生成器 (seed={base_seed})")
+    print("=" * 40)
+    
+    # 种子决定曼陀罗的结构参数
+    # 花瓣数、层数、配色风格都随种子变化
+    config_pool = [
+        (16, 7, "warm", "#0d0d0d", "mandala-sun"),
+        (12, 5, "cool", "#0a1628", "mandala-ocean"),
+        (8, 8, "pastel", "#1a1a2e", "mandala-spring"),
+        (6, 10, "mono", "#000000", "mandala-eclipse"),
+        (20, 4, "warm", "#1a0a00", "mandala-fire"),
+        (10, 6, "cool", "#0d1b2a", "mandala-ice"),
+        (24, 5, "pastel", "#1e1e2f", "mandala-dream"),
+        (7, 9, "mono", "#0a0a0a", "mandala-shadow"),
+        (14, 6, "warm", "#1a0f00", "mandala-ember"),
+        (18, 5, "cool", "#001a1a", "mandala-deep"),
+        (5, 12, "pastel", "#1a1a1a", "mandala-gossamer"),
+        (9, 7, "mono", "#0f0f0f", "mandala-stone"),
+        (15, 6, "warm", "#150505", "mandala-rust"),
+        (11, 8, "cool", "#000d1a", "mandala-abyss"),
+        (13, 7, "pastel", "#2e1a2e", "mandala-twilight"),
     ]
     
-    for name, petals, layers, scheme, bg in configs:
+    # 随机选 5 种
+    random.shuffle(config_pool)
+    configs = config_pool[:5]
+    # 为每幅画改名字——加种子后缀避免同名冲突
+    for i, (petals, layers, scheme, bg, name) in enumerate(configs):
         svg = generate_mandala_svg(
             width=800, height=800,
             num_petals=petals,
             layers=layers,
             color_scheme=scheme,
             background=bg,
-            seed=hash(name) % 10000,
+            seed=base_seed * 10 + i,
         )
         filename = f"gallery/{name}.svg"
         with open(filename, "w", encoding="utf-8") as f:
@@ -185,4 +210,4 @@ if __name__ == "__main__":
         size = len(svg)
         print(f"  ✓ {filename}  ({size/1024:.0f}KB)")
     
-    print(f"\n✅ 共生成 {len(configs)} 幅曼陀罗作品")
+    print(f"\n✅ 共生成 {len(configs)} 幅曼陀罗作品 (seed={base_seed})")

@@ -181,29 +181,57 @@ def generate_flow_field_svg(
 
 if __name__ == "__main__":
     import sys
+    import argparse
     
-    print("🌊 流场艺术生成器")
+    parser = argparse.ArgumentParser(description="Flow Field Generator")
+    parser.add_argument("--seed", type=int, default=42, help="随机种子")
+    args = parser.parse_args()
+    
+    base_seed = args.seed
+    print(f"🌊 流场艺术生成器 (seed={base_seed})")
     print("=" * 40)
     
-    # 生成多种配色
-    palettes = [
-        ("flow-ocean", "#1a5276", "#eaf2f8", 0.6),     # 深海蓝
-        ("flow-sunset", "#e74c3c", "#fdf2e9", 0.5),    # 日落红
-        ("flow-forest", "#1e8449", "#e8f8f5", 0.6),    # 森林绿
-        ("flow-midnight", "#2c3e50", "#f8f9fa", 0.5),  # 午夜黑
-        ("flow-gold", "#d4a017", "#fef9e7", 0.4),      # 金色
+    # 种子决定色彩倾向和画风
+    random.seed(base_seed)
+    
+    # 色彩池 — 从 15 种配色中根据种子选 5 种
+    color_pool = [
+        ("flow-ocean", "#1a5276", "#eaf2f8", 0.6),
+        ("flow-sunset", "#e74c3c", "#fdf2e9", 0.5),
+        ("flow-forest", "#1e8449", "#e8f8f5", 0.6),
+        ("flow-midnight", "#2c3e50", "#f8f9fa", 0.5),
+        ("flow-gold", "#d4a017", "#fef9e7", 0.4),
+        ("flow-aurora", "#6c3483", "#f5eef8", 0.5),
+        ("flow-teal", "#0e6655", "#e8f8f5", 0.6),
+        ("flow-coral", "#cb4335", "#fdedec", 0.5),
+        ("flow-steel", "#566573", "#f4f6f7", 0.4),
+        ("flow-lavender", "#7d3c98", "#f4ecf7", 0.5),
+        ("flow-peach", "#e67e22", "#fef5e7", 0.5),
+        ("flow-jade", "#148f77", "#e8f6f3", 0.5),
+        ("flow-rouge", "#922b21", "#fdedec", 0.6),
+        ("flow-sky", "#2e86c1", "#eaf2f8", 0.4),
+        ("flow-charcoal", "#424949", "#fdfefe", 0.4),
     ]
     
-    for name, color, bg, width in palettes:
+    # 种子决定粒子流动形态（不同种子→不同流场走向）
+    random.shuffle(color_pool)
+    palettes = color_pool[:5]
+    
+    for i, (name, color, bg, width) in enumerate(palettes):
+        # 每幅画用不同的子种子，但都与基础种子相关
+        sub_seed = base_seed * 10 + i
+        # 粒子数也随种子微调
+        particles = 600 + (base_seed % 5) * 100 + i * 30
+        
         svg = generate_flow_field_svg(
             width=800,
             height=800,
-            num_particles=800,
-            max_steps=120,
+            num_particles=int(particles),
+            max_steps=100 + (base_seed % 10) * 5,
             stroke_width=width,
             color=color,
             background=bg,
-            seed=hash(name) % 10000,
+            seed=sub_seed,
         )
         filename = f"gallery/{name}.svg"
         with open(filename, "w", encoding="utf-8") as f:
@@ -211,4 +239,4 @@ if __name__ == "__main__":
         size = len(svg)
         print(f"  ✓ {filename}  ({size/1024:.0f}KB)")
     
-    print(f"\n✅ 共生成 {len(palettes)} 幅流场艺术作品")
+    print(f"\n✅ 共生成 {len(palettes)} 幅流场艺术作品 (seed={base_seed})")

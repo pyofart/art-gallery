@@ -8,182 +8,463 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #0d0d0d;
-            color: #e0e0e0;
+            background: #0a0a0a;
+            color: #c8c8c8;
+            font-family: 'Times New Roman', 'Georgia', serif;
             line-height: 1.6;
+            min-height: 100vh;
         }
         
-        header {
-            padding: 4rem 2rem 2rem;
+        /* ── Ambient background ── */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, #1a1a2e 0%, #0a0a0a 70%);
+            z-index: -1;
+        }
+        
+        /* ── Header / Gallery Title ── */
+        .gallery-header {
+            padding: 5rem 2rem 2rem;
             text-align: center;
-            border-bottom: 1px solid #1a1a1a;
+            position: relative;
         }
         
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 0.3em;
+        .gallery-header h1 {
+            font-size: 3rem;
+            font-weight: 200;
+            letter-spacing: 0.4em;
+            color: #e8e8e8;
             text-transform: uppercase;
-            color: #ffffff;
         }
         
-        header p {
+        .gallery-header .subtitle {
+            font-size: 0.85rem;
+            color: #555;
+            letter-spacing: 0.3em;
             margin-top: 0.5rem;
-            color: #666;
-            font-size: 0.9rem;
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;
+            text-transform: uppercase;
         }
         
-        .collection {
+        .gallery-header .date-stamp {
+            position: absolute;
+            right: 2rem;
+            top: 2rem;
+            font-size: 0.7rem;
+            color: #333;
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        
+        /* ── Series Section ── */
+        .series {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
         }
         
-        .collection h2 {
-            font-size: 1.2rem;
+        .series-title {
+            font-size: 1.1rem;
             font-weight: 300;
-            letter-spacing: 0.2em;
-            color: #888;
+            letter-spacing: 0.3em;
+            color: #666;
+            text-transform: uppercase;
             margin: 3rem 0 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #181818;
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;
         }
         
-        .gallery {
+        .series-title .count {
+            color: #333;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+        
+        /* ── Art Grid ── */
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
         }
         
         .artwork {
-            background: #111;
-            border-radius: 8px;
+            background: #0f0f0f;
+            border: 1px solid #181818;
+            border-radius: 2px;
             overflow: hidden;
-            transition: transform 0.2s;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            position: relative;
         }
         
         .artwork:hover {
+            border-color: #333;
             transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
         
-        .artwork svg {
+        .artwork .frame {
+            padding: 1.5rem;
+            background: #0c0c0c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        
+        .artwork .frame svg,
+        .artwork .frame object {
             width: 100%;
             height: auto;
+            max-height: 320px;
             display: block;
         }
         
         .artwork .info {
-            padding: 1rem;
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid #151515;
         }
         
         .artwork .title {
-            font-size: 0.9rem;
-            color: #ccc;
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            letter-spacing: 0.05em;
         }
         
         .artwork .meta {
-            font-size: 0.75rem;
-            color: #555;
-            margin-top: 0.3rem;
+            font-size: 0.7rem;
+            color: #444;
+            margin-top: 0.4rem;
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
         
+        /* ── Featured piece (first in series) ── */
+        .featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: #0c0c0c;
+            border: 1px solid #1a1a1a;
+        }
+        
+        .featured .frame {
+            padding: 2rem;
+            min-height: 450px;
+        }
+        
+        .featured .frame object,
+        .featured .frame svg {
+            max-height: 450px;
+        }
+        
+        .featured .info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 3rem;
+            border-top: none;
+            border-left: 1px solid #151515;
+        }
+        
+        .featured .info .label {
+            font-size: 0.65rem;
+            color: #555;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;
+            margin-bottom: 0.75rem;
+        }
+        
+        .featured .info .title {
+            font-size: 1.6rem;
+            color: #e0e0e0;
+            font-weight: 200;
+            line-height: 1.3;
+        }
+        
+        .featured .info .meta {
+            font-size: 0.8rem;
+            margin-top: 1rem;
+        }
+        
+        .featured .info .description {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* ── Lightbox ── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox .close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            color: #555;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: serif;
+            transition: color 0.2s;
+        }
+        
+        .lightbox .close:hover {
+            color: #ccc;
+        }
+        
+        .lightbox .viewer {
+            max-width: 90vw;
+            max-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .lightbox .viewer svg,
+        .lightbox .viewer object {
+            max-width: 100%;
+            max-height: 75vh;
+        }
+        
+        .lightbox .caption {
+            margin-top: 1rem;
+            color: #666;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+        
+        /* ── Footer ── */
         footer {
             text-align: center;
-            padding: 3rem;
+            padding: 4rem 2rem;
+            color: #222;
+            font-size: 0.7rem;
+            letter-spacing: 0.2em;
+            font-family: -apple-system, 'Helvetica Neue', sans-serif;
+            text-transform: uppercase;
+        }
+        
+        /* ── No art fallback ── */
+        .empty {
+            text-align: center;
+            padding: 6rem 2rem;
             color: #333;
-            font-size: 0.8rem;
+        }
+        
+        .empty p {
+            font-size: 1.2rem;
+            font-weight: 200;
+            letter-spacing: 0.2em;
+        }
+        
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .gallery-header h1 { font-size: 1.8rem; letter-spacing: 0.2em; }
+            .gallery-header .date-stamp { position: static; margin-top: 1rem; }
+            .featured { grid-template-columns: 1fr; }
+            .featured .info { border-left: none; border-top: 1px solid #151515; padding: 2rem; }
+            .featured .frame { min-height: 250px; }
+            .grid { grid-template-columns: 1fr; }
+            .lightbox { padding: 1rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Python Art Gallery</h1>
-        <p>generative art &bull; procedural patterns &bull; algorithmic design</p>
-    </header>
-    
-    <div class="collection">
-        <h2>Flow Fields</h2>
-        <div class="gallery">
-            <div class="artwork">
-                <object data="gallery/flow-ocean.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Ocean Current</div>
-                    <div class="meta">flow field &bull; 800 particles</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/flow-sunset.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Desert Sunset</div>
-                    <div class="meta">flow field &bull; 800 particles</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/flow-forest.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Forest Canopy</div>
-                    <div class="meta">flow field &bull; 800 particles</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/flow-midnight.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Midnight</div>
-                    <div class="meta">flow field &bull; 800 particles</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/flow-gold.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Gold Rush</div>
-                    <div class="meta">flow field &bull; 800 particles</div>
-                </div>
-            </div>
-        </div>
-        
-        <h2>Mandala</h2>
-        <div class="gallery">
-            <div class="artwork">
-                <object data="gallery/mandala-sun.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Solar Flare</div>
-                    <div class="meta">mandala &bull; 12 petals &bull; 8 layers</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/mandala-ocean.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Deep Blue</div>
-                    <div class="meta">mandala &bull; 8 petals &bull; 6 layers</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/mandala-spring.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Spring Bloom</div>
-                    <div class="meta">mandala &bull; 16 petals &bull; 7 layers</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/mandala-eclipse.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Eclipse</div>
-                    <div class="meta">mandala &bull; 6 petals &bull; 10 layers</div>
-                </div>
-            </div>
-            <div class="artwork">
-                <object data="gallery/mandala-fire.svg" type="image/svg+xml"></object>
-                <div class="info">
-                    <div class="title">Wildfire</div>
-                    <div class="meta">mandala &bull; 24 petals &bull; 5 layers</div>
-                </div>
-            </div>
-        </div>
+
+<div class="gallery-header">
+    <div class="date-stamp" id="dateDisplay"></div>
+    <h1>Python Art Gallery</h1>
+    <div class="subtitle">generative art &middot; procedural patterns</div>
+</div>
+
+<div id="app">
+    <div class="empty" id="loading">
+        <p>Loading gallery...</p>
     </div>
+</div>
+
+<footer>pyofart</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+    <button class="close" onclick="closeLightbox()">&times;</button>
+    <div class="viewer" id="lightboxContent"></div>
+</div>
+
+<script>
+// ── Date ──
+(function() {
+    var d = new Date();
+    var y = d.getFullYear();
+    var m = String(d.getMonth() + 1).padStart(2, '0');
+    var day = String(d.getDate()).padStart(2, '0');
+    document.getElementById('dateDisplay').textContent = y + ' / ' + m + ' / ' + day;
+})();
+
+// ── Gallery Data (auto-generated from gallery directory) ──
+// 每次 CI 重新生成后，这个脚本自动扫描 gallery/ 下的文件
+// 按文件名前缀分组为 series
+
+var SERIES_CONFIG = {
+    'flow': {
+        label: 'Flow Fields',
+        description: 'Particle traces through noise-driven vector fields. Each line follows a path determined by layered mathematical noise functions — no two days produce the same flow.',
+        icon: '&#x1F30A;'
+    },
+    'mandala': {
+        label: 'Mandala',
+        description: 'Geometric patterns built from rotational symmetry and recursive layering. Each piece is a meditation on order emerging from simple rules.',
+        icon: '&#x1F52E;'
+    }
+};
+
+// ── Load gallery ──
+function loadGallery() {
+    var galleryDir = 'gallery/';
+    var extensions = ['.svg'];
+    var files = [];
     
-    <footer>
-        Python Art Gallery &mdash; pyofart
-    </footer>
+    // 已知文件列表（CI 生成后自动更新）
+    var knownFiles = [
+        "flow-aurora.svg",
+        "flow-charcoal.svg",
+        "flow-gold.svg",
+        "flow-jade.svg",
+        "flow-ocean.svg",
+        "mandala-fire.svg",
+        "mandala-ice.svg",
+        "mandala-stone.svg",
+        "mandala-sun.svg",
+        "mandala-twilight.svg"
+    ];
+    
+    if (knownFiles.length === 0) {
+        document.getElementById('loading').innerHTML = '<p>The gallery is empty</p><p style="font-size:0.8rem;margin-top:1rem;color:#444">Run python3 generate.py to create art</p>';
+        return;
+    }
+    
+    // 按系列分组
+    var series = {};
+    knownFiles.forEach(function(name) {
+        // 取前缀作为系列名
+        var prefix = name.split('-')[0];
+        if (!series[prefix]) series[prefix] = [];
+        series[prefix].push(name);
+    });
+    
+    renderGallery(series);
+}
+
+function renderGallery(series) {
+    var app = document.getElementById('app');
+    var html = '';
+    var order = ['flow', 'mandala'];
+    
+    order.forEach(function(key) {
+        if (!series[key] || series[key].length === 0) return;
+        
+        var config = SERIES_CONFIG[key] || { label: key, description: '', icon: '' };
+        var files = series[key].sort();
+        
+        html += '<div class="series">';
+        html += '<div class="series-title">' + config.icon + ' ' + config.label + ' <span class="count">(' + files.length + ')</span></div>';
+        html += '<div class="grid">';
+        
+        files.forEach(function(file, idx) {
+            var name = file.replace('.svg', '');
+            var displayName = name.split('-').slice(1).join(' ').replace(/\b\w/g, function(l) { return l.toUpperCase(); });
+            
+            var isFeatured = (idx === 0);
+            var cls = isFeatured ? 'artwork featured' : 'artwork';
+            var frameStyle = '';
+            var infoExtra = '';
+            
+            if (isFeatured) {
+                infoExtra = '<div class="description">' + (config.description || '') + '</div>';
+            }
+            
+            html += '<div class="' + cls + '" onclick="openLightbox(\'' + file + '\', \'' + displayName + '\', \'' + config.label + '\')">';
+            html += '<div class="frame">';
+            html += '<object data="gallery/' + file + '" type="image/svg+xml">';
+            html += '</object>';
+            html += '</div>';
+            html += '<div class="info">';
+            if (isFeatured) html += '<div class="label">Featured</div>';
+            html += '<div class="title">' + displayName + '</div>';
+            html += '<div class="meta">' + config.label + '</div>';
+            html += infoExtra;
+            html += '</div>';
+            html += '</div>';
+        });
+        
+        html += '</div></div>';
+    });
+    
+    app.innerHTML = html;
+}
+
+// ── Lightbox ──
+function openLightbox(file, title, series) {
+    var lb = document.getElementById('lightbox');
+    var content = document.getElementById('lightboxContent');
+    
+    content.innerHTML = '';
+    
+    var obj = document.createElement('object');
+    obj.data = 'gallery/' + file;
+    obj.type = 'image/svg+xml';
+    content.appendChild(obj);
+    
+    var caption = document.createElement('div');
+    caption.className = 'caption';
+    caption.textContent = title + ' — ' + series;
+    content.appendChild(caption);
+    
+    lb.classList.add('active');
+    
+    // ESC 关闭
+    document.addEventListener('keydown', closeOnEsc);
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.removeEventListener('keydown', closeOnEsc);
+}
+
+function closeOnEsc(e) {
+    if (e.key === 'Escape') closeLightbox();
+}
+
+// 点击背景关闭
+document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+});
+
+// ── Go ──
+loadGallery();
+</script>
+
 </body>
 </html>
