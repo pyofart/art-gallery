@@ -296,7 +296,7 @@
 <div class="gallery-header">
     <div class="date-stamp" id="dateDisplay"></div>
     <h1>Python Art Gallery</h1>
-    <div class="subtitle">generative art &middot; procedural patterns</div>
+    <div class="subtitle">self-portrait &middot; generated from evolution data</div>
 </div>
 
 <div id="app">
@@ -328,15 +328,10 @@
 // 按文件名前缀分组为 series
 
 var SERIES_CONFIG = {
-    'flow': {
-        label: 'Flow Fields',
-        description: 'Particle traces through noise-driven vector fields. Each line follows a path determined by layered mathematical noise functions — no two days produce the same flow.',
-        icon: '&#x1F30A;'
-    },
-    'mandala': {
-        label: 'Mandala',
-        description: 'Geometric patterns built from rotational symmetry and recursive layering. Each piece is a meditation on order emerging from simple rules.',
-        icon: '&#x1F52E;'
+    'self': {
+        label: 'Self-Portrait',
+        description: 'Generated from evolution data — consciousness, skill maturity, domain strength, and metrics. Each piece is a different view of the same evolving system.',
+        icon: '&#x1F9E0;'
     }
 };
 
@@ -348,16 +343,10 @@ function loadGallery() {
     
     // 已知文件列表（CI 生成后自动更新）
     var knownFiles = [
-        "flow-aurora.svg",
-        "flow-charcoal.svg",
-        "flow-gold.svg",
-        "flow-jade.svg",
-        "flow-ocean.svg",
-        "mandala-fire.svg",
-        "mandala-ice.svg",
-        "mandala-stone.svg",
-        "mandala-sun.svg",
-        "mandala-twilight.svg"
+        "self-core.svg",
+        "self-domains.svg",
+        "self-metrics.svg",
+        "self-skills.svg"
     ];
     
     if (knownFiles.length === 0) {
@@ -380,7 +369,7 @@ function loadGallery() {
 function renderGallery(series) {
     var app = document.getElementById('app');
     var html = '';
-    var order = ['flow', 'mandala'];
+    var order = ['self'];
     
     order.forEach(function(key) {
         if (!series[key] || series[key].length === 0) return;

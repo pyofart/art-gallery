@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" style="background:#0a0a0f">
+  <g transform="translate(60, 60)">
+    <text x="57" y="700" fill="#ffb74d" font-size="11" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="2" opacity="0.6">Investment</text>
+    <rect x="28" y="510" width="57" height="150" fill="#ffb74d" opacity="0.65" rx="2"/>
+    <rect x="28" y="360" width="57" height="150" fill="#ffb74d" opacity="0.62" rx="2"/>
+    <rect x="28" y="210" width="57" height="150" fill="#ffb74d" opacity="0.60" rx="2"/>
+    <rect x="28" y="60" width="57" height="150" fill="#ffb74d" opacity="0.57" rx="2"/>
+    <line x1="17" y1="165" x2="96" y2="165" stroke="#ffb74d" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="57" y="157" fill="#ffb74d" font-size="9" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.4">82%</text>
+    <text x="170" y="700" fill="#e040fb" font-size="11" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="2" opacity="0.6">Cognition</text>
+    <rect x="142" y="510" width="57" height="150" fill="#e040fb" opacity="0.60" rx="2"/>
+    <rect x="142" y="360" width="57" height="150" fill="#e040fb" opacity="0.55" rx="2"/>
+    <rect x="142" y="210" width="57" height="150" fill="#e040fb" opacity="0.57" rx="2"/>
+    <rect x="142" y="60" width="57" height="150" fill="#e040fb" opacity="0.53" rx="2"/>
+    <line x1="130" y1="225" x2="210" y2="225" stroke="#e040fb" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="170" y="217" fill="#e040fb" font-size="9" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.4">72%</text>
+    <text x="283" y="700" fill="#81c784" font-size="11" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="2" opacity="0.6">Creation</text>
+    <rect x="255" y="540" width="57" height="120" fill="#81c784" opacity="0.64" rx="2"/>
+    <rect x="255" y="420" width="57" height="120" fill="#81c784" opacity="0.61" rx="2"/>
+    <rect x="255" y="300" width="57" height="120" fill="#81c784" opacity="0.55" rx="2"/>
+    <rect x="255" y="180" width="57" height="120" fill="#81c784" opacity="0.59" rx="2"/>
+    <rect x="255" y="60" width="57" height="120" fill="#81c784" opacity="0.56" rx="2"/>
+    <line x1="244" y1="192" x2="323" y2="192" stroke="#81c784" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="283" y="184" fill="#81c784" font-size="9" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.4">78%</text>
+    <text x="397" y="700" fill="#4fc3f7" font-size="11" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="2" opacity="0.6">Research</text>
+    <rect x="368" y="510" width="57" height="150" fill="#4fc3f7" opacity="0.62" rx="2"/>
+    <rect x="368" y="360" width="57" height="150" fill="#4fc3f7" opacity="0.57" rx="2"/>
+    <rect x="368" y="210" width="57" height="150" fill="#4fc3f7" opacity="0.60" rx="2"/>
+    <rect x="368" y="60" width="57" height="150" fill="#4fc3f7" opacity="0.59" rx="2"/>
+    <line x1="357" y1="183" x2="436" y2="183" stroke="#4fc3f7" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="397" y="175" fill="#4fc3f7" font-size="9" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.4">79%</text>
+    <text x="510" y="700" fill="#aed581" font-size="11" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="2" opacity="0.6">Platform</text>
+    <rect x="482" y="540" width="57" height="120" fill="#aed581" opacity="0.65" rx="2"/>
+    <rect x="482" y="420" width="57" height="120" fill="#aed581" opacity="0.62" rx="2"/>
+    <rect x="482" y="300" width="57" height="120" fill="#aed581" opacity="0.56" rx="2"/>
+    <rect x="482" y="180" width="57" height="120" fill="#aed581" opacity="0.55" rx="2"/>
+    <rect x="482" y="60" width="57" height="120" fill="#aed581" opacity="0.54" rx="2"/>
+    <line x1="470" y1="198" x2="550" y2="198" stroke="#aed581" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="510" y="190" fill="#aed581" font-size="9" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.4">77%</text>
+    <text x="623" y="700" fill="#90a4ae" font-size="11" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="2" opacity="0.6">Pipeline</text>
+    <rect x="595" y="510" width="57" height="150" fill="#90a4ae" opacity="0.38" rx="2"/>
+    <rect x="595" y="360" width="57" height="150" fill="#90a4ae" opacity="0.45" rx="2"/>
+    <rect x="595" y="210" width="57" height="150" fill="#90a4ae" opacity="0.33" rx="2"/>
+    <rect x="595" y="60" width="57" height="150" fill="#90a4ae" opacity="0.30" rx="2"/>
+    <line x1="584" y1="465" x2="663" y2="465" stroke="#90a4ae" stroke-width="1" opacity="0.3" stroke-dasharray="3,3"/>
+    <text x="623" y="457" fill="#90a4ae" font-size="9" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.4">32%</text>
+  </g>
+</svg>

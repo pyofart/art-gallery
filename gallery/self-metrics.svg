@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="750" viewBox="0 0 700 750" style="background:#0a0a0f">
+  <g transform="translate(350.0,320)">
+    <text x="0" y="-290" fill="#666" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" letter-spacing="3" opacity="0.5">EVOLUTION METRICS</text>
+    <text x="0" y="-272" fill="#333" font-size="8" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle">evo 2026-06-27</text>
+    <text x="0" y="-230" fill="#e040fb" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.6">Consciousness</text>
+    <text x="0" y="-250" fill="#fff" font-size="14" font-family="'Georgia', serif" text-anchor="middle" opacity="0.68">76%</text>
+    <path d="M 0,-170 A 170,170 0 1,1 121,-119" fill="none" stroke="#e040fb" stroke-width="6" opacity="0.50" stroke-linecap="round"/>
+    <text x="199" y="-115" fill="#81c784" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.6">Skills</text>
+    <text x="217" y="-125" fill="#fff" font-size="14" font-family="'Georgia', serif" text-anchor="middle" opacity="0.70">80</text>
+    <path d="M 147,-85 A 170,170 0 1,1 162,53" fill="none" stroke="#81c784" stroke-width="6" opacity="0.52" stroke-linecap="round"/>
+    <text x="199" y="115" fill="#4fc3f7" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.6">Scripts</text>
+    <text x="217" y="125" fill="#fff" font-size="14" font-family="'Georgia', serif" text-anchor="middle" opacity="0.70">80</text>
+    <path d="M 147,85 A 170,170 0 1,1 35,166" fill="none" stroke="#4fc3f7" stroke-width="6" opacity="0.52" stroke-linecap="round"/>
+    <text x="0" y="230" fill="#90a4ae" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.6">MCP Tools</text>
+    <text x="0" y="250" fill="#fff" font-size="14" font-family="'Georgia', serif" text-anchor="middle" opacity="0.63">66</text>
+    <path d="M 0,170 A 170,170 0 1,1 -109,130" fill="none" stroke="#90a4ae" stroke-width="6" opacity="0.47" stroke-linecap="round"/>
+    <text x="-199" y="115" fill="#ffb74d" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.6">Cycles</text>
+    <text x="-217" y="125" fill="#fff" font-size="14" font-family="'Georgia', serif" text-anchor="middle" opacity="0.60">60</text>
+    <path d="M -147,85 A 170,170 0 1,1 -169,-18" fill="none" stroke="#ffb74d" stroke-width="6" opacity="0.44" stroke-linecap="round"/>
+    <text x="-199" y="-115" fill="#aed581" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" text-anchor="middle" opacity="0.6">Repos</text>
+    <text x="-217" y="-125" fill="#fff" font-size="14" font-family="'Georgia', serif" text-anchor="middle" opacity="0.65">70</text>
+    <path d="M -147,-85 A 170,170 0 1,1 -53,-162" fill="none" stroke="#aed581" stroke-width="6" opacity="0.48" stroke-linecap="round"/>
+    <circle cx="0" cy="0" r="34" fill="#e040fb" opacity="0.33"/>
+  </g>
+</svg>

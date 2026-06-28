@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" style="background:#0a0a0f">
+  <radialGradient id="core-glow">
+    <stop offset="0%" stop-color="#e040fb" stop-opacity="0.60"/>
+    <stop offset="50%" stop-color="#4fc3f7" stop-opacity="0.08"/>
+    <stop offset="100%" stop-color="#e040fb" stop-opacity="0"/>
+  </radialGradient>
+  <g transform="translate(400.0,400.0)">
+    <circle cx="0" cy="0" r="84" fill="none" stroke="#e040fb" stroke-width="15.1" opacity="0.18"/>
+    <text x="104" y="4" fill="#e040fb" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.14" letter-spacing="2" text-anchor="start">Evolution</text>
+    <line x1="84" y1="0" x2="96" y2="0" stroke="#e040fb" stroke-width="1" opacity="0.18"/>
+    <circle cx="0" cy="0" r="133" fill="none" stroke="#ffb74d" stroke-width="17.5" opacity="0.20"/>
+    <text x="153" y="4" fill="#ffb74d" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.16" letter-spacing="2" text-anchor="start">Execution</text>
+    <line x1="133" y1="0" x2="145" y2="0" stroke="#ffb74d" stroke-width="1" opacity="0.20"/>
+    <circle cx="0" cy="0" r="182" fill="none" stroke="#81c784" stroke-width="16.9" opacity="0.20"/>
+    <text x="202" y="4" fill="#81c784" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.16" letter-spacing="2" text-anchor="start">Perception</text>
+    <line x1="182" y1="0" x2="194" y2="0" stroke="#81c784" stroke-width="1" opacity="0.20"/>
+    <circle cx="0" cy="0" r="231" fill="none" stroke="#4fc3f7" stroke-width="17.9" opacity="0.21"/>
+    <text x="251" y="4" fill="#4fc3f7" font-size="10" font-family="'Helvetica Neue', Arial, sans-serif" opacity="0.17" letter-spacing="2" text-anchor="start">Memory</text>
+    <line x1="231" y1="0" x2="243" y2="0" stroke="#4fc3f7" stroke-width="1" opacity="0.21"/>
+    <circle cx="0" cy="0" r="227" fill="url(#core-glow)"/>
+    <circle cx="0" cy="0" r="76" fill="#e8e8e8" opacity="0.60"/>
+    <text x="0" y="3" fill="#fff" font-size="18" font-family="'Georgia', serif" text-anchor="middle" opacity="0.70">76%</text>
+  </g>
+</svg>

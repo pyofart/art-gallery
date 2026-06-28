@@ -1,31 +1,25 @@
 # Python Art Gallery
 
-Generative art made with Python — no external dependencies, just math and code.
+Self-portrait — generated from evolution data.
 
 ## Works
 
-| | Series | Technique | Pieces |
-|---|--------|-----------|--------|
-| 🌊 | Flow Fields | Noise-driven particle tracing | 5 |
-| 🔮 | Mandala | Geometric symmetry & recursion | 5 |
+| | Piece | What It Shows |
+|---|-------|-------------|
+| 🧠 | Consciousness Core | Layered capability rings; center brightness = consciousness level |
+| 📊 | Domain Spectrum | 6 domains, stacked skill maturity bars |
+| 🌌 | Skill Nebula | Star field where each star = a skill, sized by maturity |
+| 📈 | Evolution Metrics | Radial chart of 6 key metrics |
 
 ## How It Works
 
-Each piece is generated from a single Python script with zero external dependencies. The generators use mathematical noise functions, trigonometric transforms, and recursive geometry to create organic patterns.
+The gallery reads `evo.json` (evolution data from evo-sky) and generates SVG art that reflects the current state:
 
 ```bash
-# Generate all artworks
-python3 generate.py
-
-# Or individually
-python3 generate.py flow
-python3 generate.py mandala
+python3 generate.py                              # from embedded default data
+python3 generate.py --evo ../evo-sky/evo.json    # from live evolution data
 ```
 
 ## Gallery
 
-Open `index.html` in a browser to view the full gallery.
-
-## License
-
-This repository is for exhibition purposes. Generated artworks may be used freely.
+Open `index.html` in a browser to view.
